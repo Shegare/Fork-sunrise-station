@@ -26,8 +26,9 @@ Goal: leave only useful documentation that speeds up reviews and reduces the ris
 
 ### Language
 
-1. Write documentation in English.
-2. Do not distort identifiers and XML tags and do not mix languages ​​in one doc block.
+1. Comments and `summary` in fork-owned code (`_Sunrise`, `_Scp`, `_Fish`, `_Lust`, `Sunrise edit` blocks) are written in Russian.
+2. Upstream comments are never translated or rewritten, even next to a fork edit; identifiers, XML tags and API names stay English.
+3. Logs stay in English.
 
 ### C# and SWSL
 
@@ -87,7 +88,7 @@ Goal: leave only useful documentation that speeds up reviews and reduces the ris
 ## Anti-patterns ❌
 
 1. Invalid XML tags in docks (`</summarY>` and other typos).
-2. Russian-language and mixed-language doc comments in the code.
+2. Mixed-language doc block, or a translated/rewritten upstream comment.
 3. Obvious comments that simply duplicate a line of code.
 4. Using `TODO/HACK/FIXME` as "documentation of behavior" instead of a correction or normal explanation.
 5. Multi-line explanations in YAML where one phrase is enough.
@@ -202,7 +203,7 @@ Comment: the first header is correct, the second is broken due to the lack of a 
 
 ## Checklist before PR
 
-1. All new doc comments in the code are in English.
+1. New comments in fork-owned code are in Russian; upstream comments are untouched.
 2. Added `summary` for public and intersystem contracts.
 3. In partial systems there is a brief description of the role of the part.
 4. Complex blocks received a short explanation "why".
