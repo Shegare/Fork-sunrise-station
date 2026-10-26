@@ -116,11 +116,11 @@ Use it as a guideline: if new code/content doesn't follow the rules below, it's 
 
 1. `ClickableComponent` + `ClickableSystem` with a common base part.
 2. `- type: Clickable` in YAML instead of `ClickableComponent`.
-3. Alias ​​`IGameTiming` as `_timing`.
-4. Alias ​​`IRobustRandom` as `_random`.
-5. Alias ​​`TransformSystem` as `_transform`.
-6. Alias ​​`IPlayerManager` as `_player`.
-7. Alias ​​`EntityWhitelistSystem` as `_whitelist`.
+3. Alias `IGameTiming` as `_timing`.
+4. Alias `IRobustRandom` as `_random`.
+5. Alias `TransformSystem` as `_transform`.
+6. Alias `IPlayerManager` as `_player`.
+7. Alias `EntityWhitelistSystem` as `_whitelist`.
 8. ID in the style `Scp096CryOut` with a clear domain prefix.
 9. Fork ID with the prefix `Sunrise*` for unique fork content.
 10. `ent-BasePart = body part` as a short external name of the entity.

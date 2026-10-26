@@ -18,7 +18,7 @@ After the active fork is determined, keep all new fork-owned code in that fork's
 > **Minimizing changes to vanilla files is MORE IMPORTANT than "pretty" architecture.**
 > It's better to leave the "dirty" hack in one line of the vanilla file than to rewrite half the system, creating hell when merging.
 
-## � Folder structure and Project Folder
+## 📁 Folder structure and Project Folder
 
 To clearly separate vanilla code from our modifications, a special project folder is used, starting with the symbol `_` (for example, `_Sunrise`, `_Scp`).
 

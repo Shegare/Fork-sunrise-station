@@ -14,7 +14,7 @@ Before analyzing, planning paths and making changes, always fix three values:
 2. Forked project folder (`_Sunrise`, `_Scp`, `_Fish`, `_Lust`).
 3. The text of the edit marker that should be used in comments.
 
-Don't start editing vanilla files until these three values ​​are defined.
+Don't start editing vanilla files until these three values are defined.
 
 ## 2. How to determine the current fork
 
