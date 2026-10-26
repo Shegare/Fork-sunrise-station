@@ -1,5 +1,6 @@
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
+// ReSharper disable once CheckNamespace
 namespace Content.Server.GameTicking.Rules.Components;
 
 public sealed partial class NukeopsRuleComponent

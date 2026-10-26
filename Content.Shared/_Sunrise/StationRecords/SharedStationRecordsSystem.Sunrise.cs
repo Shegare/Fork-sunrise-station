@@ -3,6 +3,7 @@ using Content.Shared.Random.Helpers;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
+// ReSharper disable once CheckNamespace
 namespace Content.Shared.StationRecords;
 
 public abstract partial class SharedStationRecordsSystem
