@@ -95,7 +95,9 @@ Use it as a guideline: if new code/content doesn't follow the rules below, it's 
 1. MUST: `yml/ftl/swsl` — `snake_case`.
 2. SHOULD: maximum 2 words if the context is already expressed by folders.
 3. MUST: C# file in `CamelCase`, the name matches the key class.
-4. SHOULD: if there are several classes/partial parts in the file, the file name describes the subsection in a maximum of 2 words.
+4. MUST: a partial extending an upstream type mirrors the upstream file:
+   `<UpstreamFile>.<Fork>.cs` or `<UpstreamFile>.<Section>.<Fork>.cs`.
+   No upstream section → `<UpstreamFile>.<Fork>.<Specific>.cs`.
 
 ## Decision Tree
 
