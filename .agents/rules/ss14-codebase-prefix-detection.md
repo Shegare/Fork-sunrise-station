@@ -39,7 +39,7 @@ Select the first line that matches the exact repository slug, the name of the ro
 
 | Match | Prefix | Project folder | Single-line marker | Block markers | Note |
 | --- | --- | --- | --- | --- | --- |
-| `sunrise-station/space-station-14`, `makura-games/sunrise-station`, `sunrise-station`, `_Sunrise` | `Sunrise` | `_Sunrise` | `Sunrise-Edit` | `Sunrise edit start/end`, `Sunrise added start/end` | For new single placemarks, default to `Sunrise-Edit`. |
+| `sunrise-station/space-station-14`, `makura-games/sunrise-station`, `sunrise-station`, `_Sunrise` | `Sunrise` | `_Sunrise` | `Sunrise edit`, `Sunrise added` | `Sunrise edit start/end`, `Sunrise added start/end` | Spelling is fixed and case-sensitive, without a hyphen: only these four forms are allowed. |
 | `fire-station/project-fire`, `project-fire`, `fire-station`, `_Scp` | `Fire` | `_Scp` | `Fire edit`, `Fire added` | `Fire edit start/end`, `Fire added start/end` | For Fire, single edit/add marks are different. |
 | `fish-station`, `_Fish` | `Fish` | `_Fish` | `FIsh edit` | Use local file style | Don't automatically normalize the legacy token case. |
 | `lust-lustation`, `_Lust` | `Lust` | `_Lust` | `Lust edit` | Use local file style | If there is already a block-style nearby inside Lust, follow it. |
@@ -50,17 +50,26 @@ The same general rules apply for any fork:
 
 1. Use `Prefix`, `Project folder` and `marker` from the selected table row.
 2. Do not change the marker text, just adapt the comment syntax to the file language.
-3. If the file already uses a local style of the same fork, continue with it. Don't repurpose old markers just for cosmetics.
+3. Do not copy the marker style from neighbouring code and do not invent variants: the marker text is fixed for the fork and is taken only from the table below.
 
 Select the comment syntax to match the file language:
 
-- C#, C++, Java: `// Sunrise-Edit`, `// Fire added start - reason`
-- YAML, FTL, Python, Shell: `# Sunrise-Edit`, `# Fire added start - reason`
-- XML, HTML: `<!-- Sunrise-Edit -->`, only if comments in this format are allowed and really needed
+| File type | Edit | Added | Block edit | Block added |
+| --- | --- | --- | --- | --- |
+| `.cs`, `.swsl`, `.cpp`, `.hpp`, `.h`, `.java` | `// Sunrise edit` | `// Sunrise added` | `// Sunrise edit start` … `// Sunrise edit end` | `// Sunrise added start` … `// Sunrise added end` |
+| `.yml`, `.yaml`, `.ftl`, `.py`, `.sh` | `# Sunrise edit` | `# Sunrise added` | `# Sunrise edit start` … `# Sunrise edit end` | `# Sunrise added start` … `# Sunrise added end` |
+| `.xaml`, `.xml`, `.csproj`, `.props`, `.targets`, `.html`, `.htm` | `<!-- Sunrise edit -->` | `<!-- Sunrise added -->` | `<!-- Sunrise edit start -->` … `<!-- Sunrise edit end -->` | `<!-- Sunrise added start -->` … `<!-- Sunrise added end -->` |
+
+Rules for applying a marker:
+
+1. The marker text is case-sensitive and is written exactly as in the table: `Sunrise edit`, `Sunrise added`. Variants `Sunrise-Edit`, `Sunrise Edit`, `SUNRISE EDIT` are forbidden.
+2. A single-line marker marks a one-line fork change; block markers mark a change spanning several lines.
+3. `start` and `end` are used only in pairs; the `end` marker carries no reason phrase.
+4. The reason phrase goes after the marker separated by ` - ` and is written in Russian: `// Sunrise edit start - правим гравитацию`, `# Sunrise added - добавляем миграцию`.
 
 ## 5. How does this affect the structure of edits?
 
 1. Place new forked files in the corresponding project folder of the current fork.
 2. Mark minimal hooks in vanilla files with the edit marker of the current fork.
 3. Don't put the Sunrise code in `_Scp` and don't use `Fire edit` in `_Sunrise`.
-4. If a project is already mixing historical marker variants within one fork, for new edits follow the closest local style of that fork, but do not switch to markers from another fork.
+4. If a project already contains historical marker variants within one fork, do not reproduce them in new edits and do not copy them from the neighbouring code: the marker text always comes from section 4.

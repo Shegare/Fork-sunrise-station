@@ -170,7 +170,7 @@ Add an entry to the end of the file or to the appropriate section.
 ```yaml
 # ... existing migrations ...
 
-# Sunrise-Edit
+# Sunrise edit
 AirlockHatchSyndicate: AirlockHatchSyndicateLocked
 ```
 
