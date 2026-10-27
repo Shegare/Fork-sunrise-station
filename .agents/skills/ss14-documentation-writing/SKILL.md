@@ -88,11 +88,11 @@ Goal: leave only useful documentation that speeds up reviews and reduces the ris
 ## Anti-patterns ❌
 
 1. Invalid XML tags in docks (`</summarY>` and other typos).
-2. Mixed-language doc block, or a translated/rewritten upstream comment.
+2. A newly authored fork-owned documentation block contains multiple languages, or an upstream comment is translated or rewritten.
 3. Obvious comments that simply duplicate a line of code.
 4. Using `TODO/HACK/FIXME` as "documentation of behavior" instead of a correction or normal explanation.
 5. Multi-line explanations in YAML where one phrase is enough.
-6. Edit markers (`Sunrise-Start/End`, `Fire added start/end`) instead of behavioral description.
+6. Edit markers (`Sunrise edit start/end`, `Fire added start/end`) instead of behavioral description.
 7. FTL headers without space after `##` (`##bombs`).
 8. Frequent or decorative FTL separators (`##########`) that do not help navigation.
 
@@ -203,7 +203,7 @@ Comment: the first header is correct, the second is broken due to the lack of a 
 
 ## Checklist before PR
 
-1. New comments in fork-owned code are in Russian; upstream comments are untouched.
+1. New comments and `summary` in fork-owned code are in Russian; upstream comments are untouched; logs are in English.
 2. Added `summary` for public and intersystem contracts.
 3. In partial systems there is a brief description of the role of the part.
 4. Complex blocks received a short explanation "why".

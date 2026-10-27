@@ -96,8 +96,9 @@ Use it as a guideline: if new code/content doesn't follow the rules below, it's 
 2. SHOULD: maximum 2 words if the context is already expressed by folders.
 3. MUST: C# file in `CamelCase`, the name matches the key class.
 4. MUST: a partial extending an upstream type mirrors the upstream file:
-   `<UpstreamFile>.<Fork>.cs` or `<UpstreamFile>.<Section>.<Fork>.cs`.
-   No upstream section → `<UpstreamFile>.<Fork>.<Specific>.cs`.
+   - with an upstream section → `<UpstreamFile>.<Section>.<Fork>.cs`;
+   - without an upstream section → `<UpstreamFile>.<Fork>.cs`;
+   - a fork extension large enough to need its own partial → `<UpstreamFile>.<Fork>.<Specific>.cs`.
 
 ## Decision Tree
 
