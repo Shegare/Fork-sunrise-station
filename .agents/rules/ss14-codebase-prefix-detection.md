@@ -50,19 +50,19 @@ The same general rules apply for any fork:
 
 1. Use `Prefix`, `Project folder` and `marker` from the selected table row.
 2. Do not change the marker text, just adapt the comment syntax to the file language.
-3. Do not copy the marker style from neighbouring code and do not invent variants: the marker text is fixed for the fork and is taken only from the table below.
+3. Do not copy the marker style from neighbouring code and do not invent variants: the marker text is fixed for the fork and is taken only from the correspondence map in section 3.
 
-Select the comment syntax to match the file language:
+Select the comment syntax to match the file language and replace `<Prefix>` with the `Prefix` value of the selected row in section 3:
 
 | File type | Edit | Added | Block edit | Block added |
 | --- | --- | --- | --- | --- |
-| `.cs`, `.swsl`, `.cpp`, `.hpp`, `.h`, `.java` | `// Sunrise edit` | `// Sunrise added` | `// Sunrise edit start` … `// Sunrise edit end` | `// Sunrise added start` … `// Sunrise added end` |
-| `.yml`, `.yaml`, `.ftl`, `.py`, `.sh` | `# Sunrise edit` | `# Sunrise added` | `# Sunrise edit start` … `# Sunrise edit end` | `# Sunrise added start` … `# Sunrise added end` |
-| `.xaml`, `.xml`, `.csproj`, `.props`, `.targets`, `.html`, `.htm` | `<!-- Sunrise edit -->` | `<!-- Sunrise added -->` | `<!-- Sunrise edit start -->` … `<!-- Sunrise edit end -->` | `<!-- Sunrise added start -->` … `<!-- Sunrise added end -->` |
+| `.cs`, `.swsl`, `.cpp`, `.hpp`, `.h`, `.java` | `// <Prefix> edit` | `// <Prefix> added` | `// <Prefix> edit start` … `// <Prefix> edit end` | `// <Prefix> added start` … `// <Prefix> added end` |
+| `.yml`, `.yaml`, `.ftl`, `.py`, `.sh` | `# <Prefix> edit` | `# <Prefix> added` | `# <Prefix> edit start` … `# <Prefix> edit end` | `# <Prefix> added start` … `# <Prefix> added end` |
+| `.xaml`, `.xml`, `.csproj`, `.props`, `.targets`, `.html`, `.htm` | `<!-- <Prefix> edit -->` | `<!-- <Prefix> added -->` | `<!-- <Prefix> edit start -->` … `<!-- <Prefix> edit end -->` | `<!-- <Prefix> added start -->` … `<!-- <Prefix> added end -->` |
 
 Rules for applying a marker:
 
-1. The marker text is case-sensitive and is written exactly as in the table: `Sunrise edit`, `Sunrise added`. Variants `Sunrise-Edit`, `Sunrise Edit`, `SUNRISE EDIT` are forbidden.
+1. The marker text is taken verbatim from section 3 and is case-sensitive; any other spelling is a variant and is forbidden.
 2. A single-line marker marks a one-line fork change; block markers mark a change spanning several lines.
 3. `start` and `end` are used only in pairs; the `end` marker carries no reason phrase.
 4. The reason phrase goes after the marker separated by ` - ` and is written in Russian: `// Sunrise edit start - правим гравитацию`, `# Sunrise added - добавляем миграцию`.
@@ -72,4 +72,4 @@ Rules for applying a marker:
 1. Place new forked files in the corresponding project folder of the current fork.
 2. Mark minimal hooks in vanilla files with the edit marker of the current fork.
 3. Don't put the Sunrise code in `_Scp` and don't use `Fire edit` in `_Sunrise`.
-4. If a project already contains historical marker variants within one fork, do not reproduce them in new edits and do not copy them from the neighbouring code: the marker text always comes from section 4.
+4. If a project already contains historical marker variants within one fork, do not reproduce them in new edits and do not copy them from the neighbouring code: the marker text always comes from section 3.
