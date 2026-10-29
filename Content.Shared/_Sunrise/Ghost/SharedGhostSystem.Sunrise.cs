@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 // ReSharper disable once CheckNamespace
-namespace Content.Shared.Ghost;
+namespace Content.Shared.Ghost.Systems;
 
 public abstract partial class SharedGhostSystem
 {
